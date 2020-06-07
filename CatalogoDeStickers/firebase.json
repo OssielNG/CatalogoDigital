@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/CatalogoDeStickers",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

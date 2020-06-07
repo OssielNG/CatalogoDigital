@@ -25,7 +25,7 @@ import { AngularFireStorageModule } from 'angularfire2/storage';
     LoginComponent,
     EncabezadoComponent,
     RegistrarProductoComponent,
-    ShowProductosComponent
+    ShowProductosComponent,
   ],
   imports: [
     BrowserModule,
