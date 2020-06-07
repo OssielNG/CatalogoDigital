@@ -1,0 +1,22 @@
+<div class="container mt-3" >
+    <h4>Lista de productos</h4>
+    <form action="">
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Buscador">
+        </div>
+    </form>
+    <div class="row">
+        <div class="col-sm-3" *ngFor="let producto of productos">
+            <div class="card">
+                <img [src]="producto.urlFoto" class="card-img-top" >
+                <div class="card-body">
+                    <h6 class="card-subtitle mb-2 ">Tipo: {{producto.tipoProducto}} </h6>
+                    <h6 class="card-subtitle mb-2">Titulo: {{producto.titulo}}</h6>
+                    <h6 class="card-subtitle mb-2 ">Precio Unidad: {{producto.precioUnidad}} </h6>
+                    <a [routerLink]="['/registrar-producto/', producto.id]" class="card-link">Actualizar</a>
+                    <a href="#" class="card-link text-danger">Desactivar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

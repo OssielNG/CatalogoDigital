@@ -11,7 +11,7 @@
               Productos
             </a>
             <div *dropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" routerLink="registrar-producto">Nuevo producto</a>
+              <a class="dropdown-item" routerLink="/registrar-producto">Nuevo producto</a>
               <div class="dropdown-divider"></div>
                 <a class="dropdown-item" routerLink="/lista-de-productos">Ver productos</a>
             </div>
@@ -41,6 +41,6 @@
         
       </ul>
     </div>
-    <a class="nav-link" href="#">{{ usuario.email }}<span class="sr-only"></span></a>
+    <!--<a class="nav-link" href="#">{{ usuario.email }}<span class="sr-only"></span></a>-->
     <button class="btn btn-danger" (click)="logout()">cerrar sesion</button>
 </nav>

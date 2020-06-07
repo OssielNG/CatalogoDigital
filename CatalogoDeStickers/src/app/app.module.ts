@@ -14,13 +14,16 @@ import { NgxSpinnerModule } from "ngx-spinner";
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { EncabezadoComponent } from './encabezado/encabezado.component';
 import { RegistrarProductoComponent } from './registrar-producto/registrar-producto.component';
+import { ShowProductosComponent } from './show-productos/show-productos.component';
+import { AngularFirestore } from 'angularfire2/firestore';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     EncabezadoComponent,
-    RegistrarProductoComponent
+    RegistrarProductoComponent,
+    ShowProductosComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +38,7 @@ import { RegistrarProductoComponent } from './registrar-producto/registrar-produ
   ],
   providers: [
     AngularFireAuth,
-    //AngularFirestore,
+    AngularFirestore,
   ],
   bootstrap: [AppComponent]
 })
