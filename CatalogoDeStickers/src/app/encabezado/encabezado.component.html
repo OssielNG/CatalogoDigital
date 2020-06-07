@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Catálogo Digital</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item dropdown" dropdown>
+            <a class="nav-link dropdown-toggle" dropdownToggle id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Productos
+            </a>
+            <div *dropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" routerLink="registrar-producto">Nuevo producto</a>
+              <div class="dropdown-divider"></div>
+                <a class="dropdown-item" routerLink="/lista-de-productos">Ver productos</a>
+            </div>
+        </li>
+        <li class="nav-item dropdown" dropdown>
+          <a class="nav-link dropdown-toggle" dropdownToggle id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Pedidos
+          </a>
+          <div *dropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" routerLink="registrar-pedido">Nuevo pedido</a>
+            <div class="dropdown-divider"></div>
+              <a class="dropdown-item" routerLink="/lista-de-pedidos">Ver pedidos</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown" dropdown>
+            <a class="nav-link dropdown-toggle" dropdownToggle id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Reportes
+            </a>
+            <div *dropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Más Pedidos</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Pedidos Semanales</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Pedidos Mensuales</a>
+            </div>
+        </li>
+        
+      </ul>
+    </div>
+    <a class="nav-link" href="#">{{ usuario.email }}<span class="sr-only"></span></a>
+    <button class="btn btn-danger" (click)="logout()">cerrar sesion</button>
+</nav>

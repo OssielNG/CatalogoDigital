@@ -13,11 +13,11 @@ export class AppComponent {
 
   constructor(public afAuth: AngularFireAuth, ) {
     this.afAuth.user.subscribe((usuario)=> {
-      setTimeout(() => {
-        this.cargando = false;
-        this.usuario = usuario;
-      },2000);
+      this.cargando = false;
+      this.usuario = usuario;  
     })
   }
-  
+  logout() {
+    this.afAuth.auth.signOut();
+  }
 }

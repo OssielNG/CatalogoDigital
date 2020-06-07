@@ -12,11 +12,15 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NgxSpinnerModule } from "ngx-spinner";
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { EncabezadoComponent } from './encabezado/encabezado.component';
+import { RegistrarProductoComponent } from './registrar-producto/registrar-producto.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    EncabezadoComponent,
+    RegistrarProductoComponent
   ],
   imports: [
     BrowserModule,
