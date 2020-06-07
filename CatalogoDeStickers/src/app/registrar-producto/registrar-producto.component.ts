@@ -94,6 +94,7 @@ export class RegistrarProductoComponent implements OnInit {
 
 
     actualizar(){
+      this.formularioProducto.value.urlFoto = this.urlImagen;
       let mensaje= '';
       this.spinner.show();
       this.afs.doc<any>('productos'+'/'+this.id).update(this.formularioProducto.value)
