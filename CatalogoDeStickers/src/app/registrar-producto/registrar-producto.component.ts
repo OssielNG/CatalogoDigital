@@ -44,8 +44,9 @@ export class RegistrarProductoComponent implements OnInit {
             titulo:producto.titulo,
             precioUnidad:producto.precioUnidad,
             cantidadUnidad:producto.cantidadUnidad,
-            urlFoto:producto.urlFoto
+            urlFoto:''
           });
+          this.urlImagen= producto.urlFoto;
         });
       }
     }
