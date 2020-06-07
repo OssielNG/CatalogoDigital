@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-
+import { AngularFireAuth } from 'angularfire2/auth';
+import { auth, User } from 'firebase';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,4 +8,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'CatalogoDeStickers';
+  usuario: User;
+  cargando: boolean = true;
+
+  constructor(public afAuth: AngularFireAuth, ) {
+    this.afAuth.user.subscribe((usuario)=> {
+      setTimeout(() => {
+        this.cargando = false;
+        this.usuario = usuario;
+      },2000);
+    })
+  }
+  
 }

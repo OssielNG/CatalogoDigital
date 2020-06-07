@@ -7,19 +7,32 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
+import { LoginComponent } from './login/login.component';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { NgxSpinnerModule } from "ngx-spinner";
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BsDropdownModule.forRoot(),
     BrowserAnimationsModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig)
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    ReactiveFormsModule,
+    NgxSpinnerModule,
+    FormsModule,
+    MatSnackBarModule,
   ],
-  providers: [],
+  providers: [
+    AngularFireAuth,
+    //AngularFirestore,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="text-center">
+        <img src="assets/logo.png" alt="">
+        <h3>Bienvenidos, por favor ingrese sus datos</h3>
+    </div>
+    <form [formGroup]= "formularioLogin">
+        <div class="form-group">
+          <label for="email">Correo eléctronico</label>
+          <input type="email" class="form-control" id="email" formControlName="email" aria-describedby="emailHelp" placeholder="Ingrese su correo electronico">
+          <div *ngIf="formularioLogin.controls['email'].invalid && formularioLogin.controls['email'].dirty" class="alert alert-warning" role="alert">
+            <span *ngIf="formularioLogin.controls['email'].errors.required">El correo electronico es requerido</span>
+            <span *ngIf="formularioLogin.controls['email'].errors.email">El correo electronico no es valido</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="Password">Contraseña</label>
+          <input type="password" (keyUp.enter)="login()" class="form-control" id="Password" formControlName="password" placeholder="Ingrese su contraseña">
+          <div *ngIf="formularioLogin.controls['password'].invalid && formularioLogin.controls['password'].dirty" class="alert alert-warning" role="alert">
+            <span *ngIf="formularioLogin.controls['password'].errors.required">La contraseña es requerida</span>
+          </div>
+        </div>
+        <button type="submit" (click)="login()" [disabled]="!formularioLogin.valid" class="btn btn-primary">Ingresar</button>
+    </form>
+    <div *ngIf="!datosCorrectos"  class="alert alert-danger" role="alert">
+      {{mensajeError}}
+    </div>
+    <ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#e8ff00" type = "pacman" [fullScreen] = "true"><p style="color: white" > Ingresando al sistema... </p></ngx-spinner>
+</div>
