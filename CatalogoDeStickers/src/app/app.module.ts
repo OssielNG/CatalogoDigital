@@ -16,6 +16,8 @@ import { EncabezadoComponent } from './encabezado/encabezado.component';
 import { RegistrarProductoComponent } from './registrar-producto/registrar-producto.component';
 import { ShowProductosComponent } from './show-productos/show-productos.component';
 import { AngularFirestore } from 'angularfire2/firestore';
+import { ProgressbarModule } from 'ngx-bootstrap/progressbar';
+import { AngularFireStorageModule } from 'angularfire2/storage';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,8 @@ import { AngularFirestore } from 'angularfire2/firestore';
     NgxSpinnerModule,
     FormsModule,
     MatSnackBarModule,
+    ProgressbarModule.forRoot(),
+    AngularFireStorageModule,
   ],
   providers: [
     AngularFireAuth,

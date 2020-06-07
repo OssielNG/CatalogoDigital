@@ -1,0 +1,66 @@
+<div class="container mt-3" >
+    <form [formGroup]="formularioProducto">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="titulo">Titulo</label>
+                        <input type="text" class="form-control" id="titulo" formControlName="titulo"  placeholder="Titulo">
+                        <div *ngIf="formularioProducto.controls['titulo'].invalid && formularioProducto.controls['titulo'].dirty" class="alert alert-warning" role="alert">
+                            <span *ngIf="formularioProducto.controls['titulo'].errors.required">El titulo es requerido</span>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="tipoProducto">Tipo producto</label>
+                        <input type="text" class="form-control" id="tipoProducto" formControlName="tipoProducto"  placeholder="Tipo producto">
+                        <div *ngIf="formularioProducto.controls['tipoProducto'].invalid && formularioProducto.controls['tipoProducto'].dirty" class="alert alert-warning" role="alert">
+                            <span *ngIf="formularioProducto.controls['tipoProducto'].errors.required">El tipo producto es requerido</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="precioUnidad">Precio unidad</label>
+                        <input type="text" class="form-control" id="precioUnidad" formControlName="precioUnidad"  placeholder="Precio unidad">
+                        <div *ngIf="formularioProducto.controls['precioUnidad'].invalid && formularioProducto.controls['precioUnidad'].dirty" class="alert alert-warning" role="alert">
+                            <span *ngIf="formularioProducto.controls['precioUnidad'].errors.required">El precio unidad es requerido</span>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="cantidadUnidad">Cantidad unidad</label>
+                        <input type="text" class="form-control" id="cantidadUnidad" formControlName="cantidadUnidad"  placeholder="Cantidad unidad">
+                        <div *ngIf="formularioProducto.controls['cantidadUnidad'].invalid && formularioProducto.controls['cantidadUnidad'].dirty" class="alert alert-warning" role="alert">
+                            <span *ngIf="formularioProducto.controls['cantidadUnidad'].errors.required">La cantidad unidad es requerida</span>
+                        </div>
+                      </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label for="urlFoto">Imagen</label>
+                        <input type="file" (change)="subirImagen($event)" class="form-control-file" id="urlFoto" formControlName="urlFoto"  placeholder="Subir imagen">
+                        <div *ngIf="formularioProducto.controls['urlFoto'].invalid && formularioProducto.controls['urlFoto'].dirty" class="alert alert-warning" role="alert">
+                            <span *ngIf="formularioProducto.controls['urlFoto'].errors.required">La imagen es requerida</span>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <progressbar [value]="porcentajeSubida" type="success" [striped]="true">{{porcentajeSubida}}</progressbar>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-primary" *ngIf="!esEditable" (click)="registrar()" [disabled]="formularioProducto.invalid">Registrar</button>
+            <button class="btn btn-success" *ngIf="esEditable" (click)="actualizar()" [disabled]="formularioProducto.invalid">Actualizar</button>
+        </div>
+    </form>
+    <ngx-spinner *ngIf="!esEditable" bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#e8ff00" type = "pacman" [fullScreen] = "true"><p style="color: white" > Registrando al nuevo usuario... </p></ngx-spinner>
+    <ngx-spinner *ngIf="esEditable" bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#e8ff00" type = "pacman" [fullScreen] = "true"><p style="color: white" > Actualizando al usuario... </p></ngx-spinner>
+</div>
